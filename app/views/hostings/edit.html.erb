@@ -1,0 +1,50 @@
+<h1>Επεξεργασία πακέτου</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+
+
+<%= form_for(@hosting) do |f| %>
+
+	<% if @hosting.errors.any? %>
+	  <div id="error_explanation">
+	    <div class="alert alert-error">
+	      The form contains <%= pluralize(@hosting.errors.count, "error") %>.
+	    </div>
+	    <ul>
+	    <% @hosting.errors.full_messages.each do |msg| %>
+	      <li>* <%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  
+    <%= f.label :registration %><br />
+    <%= f.datepicker :registration %>
+  
+    <%= f.label :expiration %><br />
+    <%= f.datepicker :expiration %>
+  
+    <%= f.label :renewal %><br />
+    <%= f.datepicker :renewal %>
+  
+    <%= f.label "Ιδιοκτήτης" %><br />
+    <%= collection_select(:hosting, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %>
+    <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 
+    	{:include_blank => 'None'})
+    %>
+    <%#= options_from_collection_for_select(Customer.all, :id, :name) %>
+    <%#= f.text_field @customers %>
+
+
+      <br /><%= f.submit "Ενημέρωση πακέτου", class: "btn btn-medium btn-primary" %>
+    <% end %>
+
+<%= link_to 'Επιστροφή', hostings_path, :class=>'btn btn-medium'  %>
+
+</div>
+</div>
+

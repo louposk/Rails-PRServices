@@ -15,6 +15,7 @@
 
 class Customer < ActiveRecord::Base
   attr_accessible :address, :afm, :email, :name, :tel
+  has_many :hostings
 
   #Αν εισαχθούν κεφαλαία τα κάνει μικρά
   before_save { |customer| customer.email = email.downcase }

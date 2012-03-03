@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hosting.name %>
+</p>
+
+<p>
+  <b>Registration:</b>
+  <%= @hosting.registration %>
+</p>
+
+<p>
+  <b>Expiration:</b>
+  <%= @hosting.expiration %>
+</p>
+
+<p>
+  <b>Renewal:</b>
+  <%= @hosting.renewal %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @hosting.customer_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_hosting_path(@hosting) %> |
+<%= link_to 'Back', hostings_path %>

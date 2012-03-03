@@ -1,4 +1,6 @@
 RailsPrservices::Application.routes.draw do
+  resources :hostings
+
   resources :customers
 
   root to: 'static_pages#home'

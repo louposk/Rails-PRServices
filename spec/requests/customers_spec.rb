@@ -8,4 +8,13 @@ describe "Customers" do
       response.status.should be(200)
     end
   end
+
+describe "Editing a customer" do
+	it "should edit the customer" do
+		
+
+	end
+
 end
+
+
