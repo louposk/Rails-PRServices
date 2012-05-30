@@ -1,5 +1,38 @@
 <h1>New customer</h1>
 
-<%= render 'form' %>
+
+<div class="row">
+  <div class="span6 offset3">
+
+  	<!-- Form errors messages -->
+
+    <%= form_for(@customer) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+      
+      <%= f.label :tel %>
+      <%= f.text_field :tel %>
+      
+      <%= f.label :afm %>
+      <%= f.text_field :afm %>
+
+<!--       <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %> -->
+
+      <br /><%= f.submit "Δημιουργία χρήστη", class: "btn btn-nedium btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Back', customers_path %>
