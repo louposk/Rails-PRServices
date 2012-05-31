@@ -5,8 +5,31 @@
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Home",    '/' %></li>
-              <li><%= link_to "Hostings",    '/hostings' %></li>
-              <li><%= link_to "Customers",    '/customers' %></li>
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Hostings <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Εμφάνιση όλων", hostings_path %></li>
+                  <li><%= link_to "Δημιουργία Νέου", new_hosting_url %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Sign out", '#' %>
+                  </li>
+                </ul>
+              </li>
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Πελάτες <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Εμφάνιση όλων", customers_url %></li>
+                  <li><%= link_to "Δημιουργία Νέου", new_customer_url %></li>
+                </ul>
+              </li>
+
               <li><%= link_to "Help",    '/help' %></li>
               <li><%= link_to "Sign in", '#' %></li>
             </ul>
