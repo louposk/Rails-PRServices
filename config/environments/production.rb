@@ -54,14 +54,6 @@ RailsPrservices::Application.configure do
   # Config action mailer delivery method
   config.action_mailer.delivery_method = :smtp
 
-  ActionMailer::Base.smtp_settings = {
-  :address  => "mail.projectteam.gr",
-  :port  => 25,
-  :user_name  => "webmaster@projeccteam.gr",
-  :password  => "$*z1$*",
-  :authentication  => :login
-}
-
 
   # Enable threaded mode
   # config.threadsafe!
