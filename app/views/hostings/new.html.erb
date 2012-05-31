@@ -1,10 +1,10 @@
-<h1>New hosting</h1>
+<h1>Δημιουργία νέου πακέτου</h1>
 
 <div class="row">
   <div class="span6 offset3">
 
 
-<%= form_for(@hosting) do |f| %>
+<%= form_for @hosting, :html => { :class => "form-horizontal" } do |f| %>
 
 	<% if @hosting.errors.any? %>
 	  <div id="error_explanation">
@@ -19,16 +19,16 @@
 	  </div>
 	<% end %>
 
-    <%= f.label :name %>
+    <%= f.label "Όνομα" %>
     <%= f.text_field :name %>
   
-    <%= f.label :registration %><br />
+    <%= f.label "Κατοχύρωση" %><br />
     <%= f.datepicker :registration , :tabindex => 70 %>
   
-    <%= f.label :expiration %><br />
+    <%= f.label "Λήξη" %><br />
     <%= f.datepicker :expiration %>
   
-    <%= f.label :renewal %><br />
+    <%= f.label "Ανανέωση" %><br />
     <%= f.datepicker :renewal %>
   
     <%= f.label "Ιδιοκτήτης" %><br />

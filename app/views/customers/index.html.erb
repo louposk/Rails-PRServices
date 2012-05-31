@@ -1,7 +1,8 @@
-<h1>Listing customers</h1>
+<h1>Πελάτες</h1>
 
-<table>
+<table class="table table-striped table-condensed">
   <tr>
+    <th>Α/Α</th>
     <th>Name</th>
     <th>Email</th>
     <th>Address</th>
@@ -11,21 +12,22 @@
     <th></th>
     <th></th>
   </tr>
-
+<% @aa=0 %>
 <% @customers.each do |customer| %>
   <tr>
+    <td><%= @aa = @aa+1 %></td>
     <td><%= customer.name %></td>
     <td><%= customer.email %></td>
     <td><%= customer.address %></td>
     <td><%= customer.tel %></td>
     <td><%= customer.afm %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Εμφάνιση στοιχείων', customer, :class=>'btn btn-medium btn-info' %></td>
+    <td><%= link_to 'Επεξεργασία',edit_customer_path(customer), :class=>'btn btn-medium' %></td>
+    <td><%= link_to 'Διαγραφή', customer, confirm: 'Είστε σίγουρος?', method: :delete, :class=>'btn btn-medium btn-danger' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Customer', new_customer_path %>
+<%#= link_to 'New Customer', new_customer_path %>
