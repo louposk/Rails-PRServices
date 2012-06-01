@@ -46,7 +46,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       if @customer.save
         #Send welcome mail to customer
-        CustomerMailer.welcome_email(@customer).deliver
+        CustomerMailer.welcome_email(@customer)
 
 
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
