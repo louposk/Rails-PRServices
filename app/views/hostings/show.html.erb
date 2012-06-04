@@ -25,6 +25,14 @@
   <%= @hosting.customer_id %>
 </p>
 
+<h1>Time now: <%= @diafora %> </h1>
+<h1>Elikse: <%= @eliske %> </h1>
+<% from_time = Time.now
+to_time = @hosting.expiration
+%>
+<h2><%#= distance_of_time_in_words(from_time, to_time + 60.hours, include_seconds = false) %></h2>
+<h2><%= distance_of_time_in_words_to_now(from_time, include_seconds = false) %></h2>
+
 
 <%= link_to 'Edit', edit_hosting_path(@hosting) %> |
 <%= link_to 'Back', hostings_path %>

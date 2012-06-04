@@ -1,4 +1,5 @@
 class HostingsController < ApplicationController
+
   # GET /hostings
   # GET /hostings.json
   def index
@@ -15,7 +16,12 @@ class HostingsController < ApplicationController
   def show
     @hosting = Hosting.find(params[:id])
 
-    respond_to do |format|
+    @expiration = @hosting.expiration
+
+    # @diafora = @hosting.expiration.to_time - @hosting.registration
+
+
+     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hosting }
     end
@@ -81,4 +87,5 @@ class HostingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

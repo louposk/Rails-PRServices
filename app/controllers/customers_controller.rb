@@ -85,4 +85,11 @@ class CustomersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def send_email
+        @customer = Customer.all
+        
+        CustomerMailer.welcome_email(@customer).deliver
+
+  end
 end
