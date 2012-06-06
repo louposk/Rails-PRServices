@@ -25,14 +25,11 @@
   <%= @hosting.customer_id %>
 </p>
 
-<h1>Time now: <%= @now %> </h1>
-<h1>Email the stalei: <%= @new_exp %> </h1>
-<% from_time = Time.new
-to_time = @hosting.expiration
-%>
-<h2><%#= distance_of_time_in_words(from_time, to_time + 60.hours, include_seconds = false) %></h2>
-<h2><%= distance_of_time_in_words_to_now(from_time, include_seconds = false) %></h2>
 
+<h1>Expiration: <%#= @exp.month %> </h1>
+<h1>Twra: <%#= @now.month %> </h1>
+<h1>Idia: <%#= @idia %> </h1>
+<h2><%#= distance_of_time_in_words_to_now(from_time, include_seconds = false) %></h2>
 
 <%= link_to 'Edit', edit_hosting_path(@hosting) %> |
 <%= link_to 'Back', hostings_path %>

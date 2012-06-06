@@ -16,6 +16,7 @@ class HostingsController < ApplicationController
   def show
     @hosting = Hosting.find(params[:id])
 
+<<<<<<< HEAD
     @exp = @hosting.expiration
 
     @new_exp = @exp - 1.month
@@ -31,6 +32,8 @@ class HostingsController < ApplicationController
     # @diafora = @hosting.expiration.to_time - @hosting.registration
 
 
+=======
+>>>>>>> Scheduler
      respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hosting }
@@ -96,6 +99,36 @@ class HostingsController < ApplicationController
       format.html { redirect_to hostings_url }
       format.json { head :no_content }
     end
+  end
+
+  def all_hostings
+    @hostings = Hosting.all
+    @now = DateTime.now
+
+
+    @hostings.each do |hosting|
+      @exp = hosting.expiration
+
+      send_mail_one_month_before_expiration(@exp,@now,hosting)
+
+    end
+
+        #Checks for expiration dates and send email
+    
+
+  end
+
+  def send_mail_one_month_before_expiration(exp,now,hosting)
+
+    if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
+        @idia = "Send email to #{hosting.customer.email}"
+        # HostingMailer.hosting_expires(email).deliver
+    else
+      @idia = "Dont send email"
+    end
+
+    return @idia
+
   end
 
 end
