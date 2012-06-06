@@ -16,7 +16,17 @@ class HostingsController < ApplicationController
   def show
     @hosting = Hosting.find(params[:id])
 
-    @expiration = @hosting.expiration
+    @exp = @hosting.expiration
+
+    @new_exp = @exp - 1.month
+    @now = Time.now
+    # previous = @exp.prev_month
+    # if previous.month==Date.now 
+    #   @sendmail = "true"
+    # else 
+    #   @sendmail = "false"
+    # exp.prev_month
+
 
     # @diafora = @hosting.expiration.to_time - @hosting.registration
 
