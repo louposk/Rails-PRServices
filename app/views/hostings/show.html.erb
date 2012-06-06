@@ -25,8 +25,9 @@
   <%= @hosting.customer_id %>
 </p>
 
-<h1>Time now: <%= @diafora %> </h1>
-<h1>Elikse: <%= @eliske %> </h1>
+<h1>Expiration: <%= @exp.month %> </h1>
+<h1>Twra: <%= @now.month %> </h1>
+<h1>Idia: <%= @idia %> </h1>
 <% from_time = Time.now
 to_time = @hosting.expiration
 %>
