@@ -6,4 +6,4 @@ class HostingMailer < ActionMailer::Base
 #     @url  = "http://www.projectteam.gr"
 #     mail(:to => @hosting.customer.email, :subject => "Project Team - Η υπηρεσίας σας λήγει")
 #   end
-# end
+end
