@@ -21,7 +21,7 @@
     <td><%= customer.address %></td>
     <td><%= customer.tel %></td>
     <td><%= customer.afm %></td>
-    <td><%= link_to 'Εμφάνιση στοιχείων', customer, :class=>'btn btn-medium btn-info' %></td>
+    <td><%= link_to 'Περισσότερα', customer, :class=>'btn btn-medium' %></td>
     <td><%= link_to 'Επεξεργασία',edit_customer_path(customer), :class=>'btn btn-medium' %></td>
     <td><%= link_to 'Διαγραφή', customer, confirm: 'Είστε σίγουρος?', method: :delete, :class=>'btn btn-medium btn-danger' %></td>
   </tr>
