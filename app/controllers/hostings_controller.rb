@@ -16,11 +16,10 @@ class HostingsController < ApplicationController
   def show
     @hosting = Hosting.find(params[:id])
 
-<<<<<<< HEAD
     @exp = @hosting.expiration
 
-    @new_exp = @exp - 1.month
-    @now = Time.now
+    # @new_exp = @exp - 1.month
+    # @now = Time.now
     # previous = @exp.prev_month
     # if previous.month==Date.now 
     #   @sendmail = "true"
@@ -32,8 +31,6 @@ class HostingsController < ApplicationController
     # @diafora = @hosting.expiration.to_time - @hosting.registration
 
 
-=======
->>>>>>> Scheduler
      respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hosting }
