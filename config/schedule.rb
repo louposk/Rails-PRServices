@@ -18,8 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.day do
-	runner "Hosting.all_hostings"	
-end
+# every 1.day do
+# 	runner "Hosting.all_hostings"	
+# end
 
 
