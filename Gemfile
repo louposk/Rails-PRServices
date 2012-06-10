@@ -4,6 +4,8 @@ gem 'rails', '3.2.3'
 gem "bootstrap-sass", '2.0.3.1'
 gem 'jquery-rails', '~>2.0.0'
 gem 'whenever', :require => false
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 #Datepicker in form https://github.com/albertopq/jquery_datepicker
 gem "jquery_datepicker", "0.3.4"

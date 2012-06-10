@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require_tree .
+
+$('#datepicker').datepicker('setStartDate', '2012-01-01');
