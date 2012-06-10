@@ -4,6 +4,7 @@
           <%= link_to "PRSERVICES", '/', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
+              <% if admin_signed_in? %>
               <li><%= link_to "Αρχική",    '/' %></li>
 
               <li id="fat-menu" class="dropdown">
@@ -31,7 +32,15 @@
               </li>
 
               <li><%= link_to "Help",    '/help' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
+              <li>
+                    <%= link_to('Αποσύνδεση', destroy_admin_session_path, :method => :delete) %>
+
+
+
+                    <% else %>
+                    <li><%= link_to('Είσοδος', new_admin_session_path)  %></li>
+                  <% end %>
+              </li>
             </ul>
           </nav>
         </div>

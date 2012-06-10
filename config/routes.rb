@@ -1,4 +1,6 @@
 RailsPrservices::Application.routes.draw do
+  devise_for :admins
+
   resources :hostings
 
   resources :customers
