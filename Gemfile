@@ -7,6 +7,9 @@ gem 'whenever', :require => false
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
+#User authentication https://github.com/plataformatec/devise
+gem "devise", "~> 2.1.0"
+
 #Datepicker in form https://github.com/albertopq/jquery_datepicker
 gem "jquery_datepicker", "0.3.4"
 #gem 'formtastic', '2.2.0'
