@@ -1,5 +1,6 @@
 RailsPrservices::Application.routes.draw do
-  devise_for :admins
+  # devise_for :admins
+  devise_for :admins, :path_names => { :sign_up => "register"}
 
   resources :hostings
 
