@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610215748) do
+ActiveRecord::Schema.define(:version => 20120613191856) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(:version => 20120610215748) do
   end
 
   add_index "customers", ["email"], :name => "index_customers_on_email", :unique => true
+
+  create_table "domains", :force => true do |t|
+    t.string   "name"
+    t.date     "registration"
+    t.date     "expiration"
+    t.date     "renewal"
+    t.string   "dns1"
+    t.string   "dns2"
+    t.string   "epp"
+    t.string   "status"
+    t.integer  "customer_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "hostings", :force => true do |t|
     t.string   "name"

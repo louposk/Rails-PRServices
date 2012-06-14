@@ -1,0 +1,47 @@
+<h1>Νεό όνομα χώρου</h1>
+<div class="row">
+  <div class="span6 offset3">
+
+<%= form_for @domain, :html => { :class => "form-horizontal" } do |f| %>
+
+	<% if @domain.errors.any? %>
+	  <div id="error_explanation">
+	    <div class="alert alert-error">
+	      The form contains <%= pluralize(@domain.errors.count, "error") %>.
+	    </div>
+	    <ul>
+	    <% @domain.errors.full_messages.each do |msg| %>
+	      <li>* <%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+
+    <%= f.label "Όνομα" %>
+    <%= f.text_field :name %>
+  
+    <%= f.label "Κατοχύρωση" %><br />
+    <%= f.text_field :registration , :tabindex => 70 %>
+  
+    <%= f.label "Λήξη" %><br />
+    <%= f.datepicker :expiration %>
+  
+    <%= f.label "Ανανέωση" %><br />
+    <%= f.datepicker :renewal %>
+  
+    <%= f.label "Ιδιοκτήτης" %><br />
+    <%= collection_select(:domain, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %>
+    <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 
+    	{:include_blank => 'None'})
+    %>
+    <%#= options_from_collection_for_select(Customer.all, :id, :name) %>
+    <%#= f.text_field @customers %>
+
+
+      <br /><%= f.submit "Καταχώρηση", class: "btn btn-nedium btn-primary" %>
+    <% end %>
+
+<%= link_to 'Back', domains_path %>
+
+</div>
+</div>
