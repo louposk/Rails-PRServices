@@ -3,8 +3,9 @@ class HostingMailer < ActionMailer::Base
 
   def hosting_expires(hosting)
     @hosting = hosting
+	@send_to = "@hosting.name"
     @url  = "http://www.projectteam.gr"
-    return @hosting
+    return @send_to
     # mail(:to => @hosting.customer.email, :subject => "Project Team - Η υπηρεσίας σας λήγει")
   end
 end
