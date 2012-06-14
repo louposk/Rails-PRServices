@@ -10,9 +10,8 @@ module HostingsHelper
 	    @hosting = hosting
 	    #Send an email to the customer for hosting expiration
 
-	    return @hosting
-	    # if @hosting
-	    #   HostingMailer.hosting_expires(@hosting).deliver
-	    # end
+	    if @hosting
+	      HostingMailer.hosting_expires(@hosting).deliver
+	    end
   end
 end
