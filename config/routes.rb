@@ -1,9 +1,14 @@
 RailsPrservices::Application.routes.draw do
-  devise_for :admins
+    get "hostings/email"
+
+  resources :domains
 
   resources :hostings
 
   resources :customers
+
+
+  devise_for :admins
 
   root to: 'static_pages#home'
   
@@ -15,6 +20,9 @@ RailsPrservices::Application.routes.draw do
   get "static_pages/help"
   get "static_pages/about"
   get "static_pages/contact"
+
+  # match "email" => "hostings#email"
+
 
   # get "root/index"
 

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @domain.name %>
+</p>
+
+<p>
+  <b>Registration:</b>
+  <%= @domain.registration %>
+</p>
+
+<p>
+  <b>Renewal:</b>
+  <%= @domain.renewal %>
+</p>
+
+<p>
+  <b>Expiration:</b>
+  <%= @domain.expiration %>
+</p>
+
+<p>
+  <b>Dns1:</b>
+  <%= @domain.dns1 %>
+</p>
+
+<p>
+  <b>Dns2:</b>
+  <%= @domain.dns2 %>
+</p>
+
+<p>
+  <b>Epp:</b>
+  <%= @domain.epp %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @domain.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_domain_path(@domain) %> |
+<%= link_to 'Back', domains_path %>

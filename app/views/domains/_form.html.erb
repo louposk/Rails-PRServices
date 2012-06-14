@@ -1,0 +1,16 @@
+<%= semantic_form_for @domain do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :registration %>
+    <%= f.input :renewal %>
+    <%= f.input :expiration %>
+    <%= f.input :dns1 %>
+    <%= f.input :dns2 %>
+    <%= f.input :epp %>
+    <%= f.input :status %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
