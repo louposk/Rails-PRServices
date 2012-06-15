@@ -93,7 +93,7 @@ class HostingsController < ApplicationController
     @hosting.destroy
 
     respond_to do |format|
-      format.html { redirect_to hostings_url }
+      format.html { redirect_to hostings_url, alert: 'Deleted!' }
       format.json { head :no_content }
     end
   end
