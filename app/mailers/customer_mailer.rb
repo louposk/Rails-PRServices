@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CustomerMailer < ActionMailer::Base
 	#To mail του αποστολέα
   default from: "webmaster@projectteam.gr"

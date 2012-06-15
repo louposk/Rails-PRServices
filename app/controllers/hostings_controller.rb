@@ -130,26 +130,5 @@ class HostingsController < ApplicationController
 
   end
 
-  def send_mail_one_month_before_expiration
-    @idia = "Send email"
-
-    # if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
-    #     @idia = "Send email to #{hosting.customer.email}"
-    #     # HostingMailer.hosting_expires(email).deliver
-    # else
-    #   @idia = "Dont send email"
-    # end
-
-    return @idia
-
-  end
-
-  # def send_expiration_email(hosting)
-  #   @hosting = hosting
-  #   #Send an email to the customer for hosting expiration
-  #   if @hosting
-  #     HostingMailer.hosting_expires(@hosting).deliver
-  #   end
-  # end
-
+  
 end

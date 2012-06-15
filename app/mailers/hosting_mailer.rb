@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class HostingMailer < ActionMailer::Base
     default from: "webmaster@projectteam.gr"
 
@@ -7,6 +9,6 @@ class HostingMailer < ActionMailer::Base
     @url  = "http://www.projectteam.gr"
     # return @customer
      mail(:to => @customer.email, 
-     	:subject => "Your service expires")
+     	:subject => "Project Team - Η υπηρεσία σας λήγει")
   end
 end
