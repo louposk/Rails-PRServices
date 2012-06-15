@@ -9,7 +9,9 @@
       if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
       	Θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
 
-      	<% send_expiration_email(hosting) %>
+            <%
+            @hosting = hosting
+             HostingMailer.hosting_expires(@hosting).deliver %>
 
       
       <% else %>
@@ -19,6 +21,8 @@
       
 
     <% end %>
+ 
+
 </p>
 <p><%= @exp %></p>
-<p><%= @send_to %></p>
+<p><%= @customer %></p>
