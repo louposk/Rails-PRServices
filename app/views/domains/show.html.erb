@@ -1,45 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @domain.name %>
-</p>
-
-<p>
-  <b>Registration:</b>
-  <%= @domain.registration %>
-</p>
-
-<p>
-  <b>Renewal:</b>
-  <%= @domain.renewal %>
-</p>
-
-<p>
-  <b>Expiration:</b>
-  <%= @domain.expiration %>
-</p>
-
-<p>
-  <b>Dns1:</b>
-  <%= @domain.dns1 %>
-</p>
-
-<p>
-  <b>Dns2:</b>
-  <%= @domain.dns2 %>
-</p>
-
-<p>
-  <b>Epp:</b>
-  <%= @domain.epp %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @domain.status %>
-</p>
+<h1>Όνομα χώρου: <%= @domain.name %></h1>
+<table class="table table-striped table-condensed">
+  <tr><td><b>Κατοχύρωση:</b></td><td> <%= @domain.registration %></td></tr>
+  <tr><td><b>Ανανέωση:</b></td><td> <%= @domain.renewal %></td></tr>
+  <tr><td><b>Λήξη:</b></td><td> <%= @domain.expiration %></td></tr>
+  <tr><td><b>DNS 1:</b></td><td> <%= @domain.dns1 %></td></tr>
+  <tr><td><b>DNS 2:</b></td><td> <%= @domain.dns2 %></td></tr>
+  <tr><td><b>Κωδικός εξουσιοδότησης:</b></td><td> <%= @domain.epp %></td></tr>
+  <tr><td><b>Κατάσταση:</b></td><td> <%= @domain.status %></td></tr>
+  <tr><td><b>Ιδιοκτήτης:</b></td><td> <%= @domain.customer.name %></td></tr>
+</table>
 
 
-<%= link_to 'Edit', edit_domain_path(@domain) %> |
-<%= link_to 'Back', domains_path %>
+<!-- <h1>Expiration: <%#= @exp.month %> </h1>
+<h1>Twra: <%#= @now.month %> </h1>
+<h1>Idia: <%#= @idia %> </h1>
+<h2><%#= distance_of_time_in_words_to_now(from_time, include_seconds = false) %></h2> -->
+
+<%= link_to 'Επεξεργασία', edit_domain_path(@domain), :class=>'btn btn-medium' %> |
+<%= link_to 'Επιστροφή', domains_path, :class=>'btn btn-medium' %>

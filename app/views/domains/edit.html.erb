@@ -1,6 +1,61 @@
-<h1>Editing domain</h1>
+<h1>Επεξεργασία ονόματος χώρου</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
 
-<%= link_to 'Show', @domain %> |
-<%= link_to 'Back', domains_path %>
+<%= form_for(@domain) do |f| %>
+
+	<% if @domain.errors.any? %>
+	  <div id="error_explanation">
+	    <div class="alert alert-error">
+	      The form contains <%= pluralize(@domain.errors.count, "error") %>.
+	    </div>
+	    <ul>
+	    <% @domain.errors.full_messages.each do |msg| %>
+	      <li>* <%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+
+    <%= f.label "Όνομα χώρου" %>
+    <%= f.text_field :name %>
+  
+    <%= f.label "Κατοχύρωση" %>
+    <%= f.datepicker :registration %>
+
+    <%= f.label "Ανανέωση" %>
+    <%= f.datepicker :renewal %>
+  
+    <%= f.label "Λήξη" %>
+    <%= f.datepicker :expiration %>
+
+    <%= f.label "DNS 1" %>
+    <%= f.text_field :dns1 %>
+     
+    <%= f.label "DNS 2" %>
+    <%= f.text_field :dns2 %>
+
+    <%= f.label "Κωδικός εξουσιοδότησης" %>
+    <%= f.text_field :epp %>
+
+    <%= f.label "Κατάσταση" %>
+    <%= f.text_field :status %>
+  
+    <%= f.label "Ιδιοκτήτης" %><br />
+    <%= collection_select(:domain, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %>
+    <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 
+    	{:include_blank => 'None'})
+    %>
+    <%#= options_from_collection_for_select(Customer.all, :id, :name) %>
+    <%#= f.text_field @customers %>
+
+
+      <br /><%= f.submit "Ενημέρωση ονόματος", class: "btn btn-medium btn-primary" %>
+    <% end %>
+
+
+<%= link_to 'Επιστροφή', domains_path, :class=>'btn btn-medium'  %>
+
+</div>
+</div>

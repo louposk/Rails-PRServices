@@ -1,0 +1,28 @@
+<h1>Αποστολή email</h1>
+<p>Θα αποσταλούν email στους παρακάτω:</p>
+<p> <% @domains.each do |domain|
+      
+      exp = domain.expiration
+      now = @now
+
+      #Αποστολή email ενα μήνα πριν τη λήξη
+      if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
+      	Θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
+
+            <%#
+            @hosting = hosting
+             HostingMailer.hosting_expires(@hosting).deliver %>
+
+      
+      <% else %>
+      	Δεν θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
+      <% end %>
+
+      
+
+    <% end %>
+ 
+
+</p>
+<p><%#= @exp %></p>
+<p><%#= @customer %></p>

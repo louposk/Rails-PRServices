@@ -3,8 +3,9 @@ RailsPrservices::Application.routes.draw do
   devise_for :admins, :path_names => { :sign_up => "register"}
     
     get "hostings/email"
-
+    get "domains/email"
   resources :domains
+
 
   resources :hostings
 

@@ -80,4 +80,22 @@ class DomainsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def email
+    @domains = Domain.all
+    @now = DateTime.now
+
+    @domains.each do |domain|
+      exp = domain.expiration
+      now = @now
+
+        #Αποστολή email ενα μήνα πριν τη λήξη
+        if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
+              @domain = domain
+              # HostingMailer.hosting_expires(@hosting).deliver
+        end
+
+    end 
+
+  end
 end

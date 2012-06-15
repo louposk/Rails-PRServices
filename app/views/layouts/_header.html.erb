@@ -14,6 +14,10 @@
                 <ul class="dropdown-menu">
                   <li><%= link_to "Εμφάνιση όλων", domains_path %></li>
                   <li><%= link_to "Δημιουργία Νέου", new_domain_url %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Αποστολή email", domains_email_path %>
+                  </li>
                 </ul>
               </li>
 
