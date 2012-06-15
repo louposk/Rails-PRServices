@@ -18,8 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 10.minutes do
-	runner "Hosting.email"	
-end
+# every 10.minutes do
+# 	runner "Hosting.email"	
+# end
 
 
