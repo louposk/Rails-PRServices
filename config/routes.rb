@@ -4,12 +4,7 @@ RailsPrservices::Application.routes.draw do
     
     get "hostings/email"
     get "domains/email"
-  resources :domains
-
-
-  resources :hostings
-
-  resources :customers
+  resources :domains, :hostings, :customers
 
 
   devise_for :admins

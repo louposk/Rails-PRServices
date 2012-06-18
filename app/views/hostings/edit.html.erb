@@ -22,16 +22,16 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   
-    <%= f.label :registration %><br />
-    <%= f.datepicker :registration %>
+    <%= f.label :registration %>
+    <%= f.text_field :registration, :class =>"datepicker" %>
   
-    <%= f.label :expiration %><br />
-    <%= f.datepicker :expiration %>
-  
-    <%= f.label :renewal %><br />
-    <%= f.datepicker :renewal %>
-  
-    <%= f.label "Ιδιοκτήτης" %><br />
+    <%= f.label :renewal %>
+    <%= f.text_field :renewal, :class =>"datepicker" %>
+
+    <%= f.label :expiration %>
+    <%= f.text_field :expiration, :class =>"datepicker" %> 
+    
+    <%= f.label "Ιδιοκτήτης" %>
     <%= collection_select(:hosting, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %>
     <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 
     	{:include_blank => 'None'})

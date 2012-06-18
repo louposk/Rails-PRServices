@@ -92,7 +92,7 @@ class DomainsController < ApplicationController
         #Αποστολή email ενα μήνα πριν τη λήξη
         if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
               @domain = domain
-              # HostingMailer.hosting_expires(@hosting).deliver
+              DomainMailer.domain_expires(@domain).deliver
         end
 
     end 

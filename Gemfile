@@ -11,7 +11,7 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
 gem "devise", "~> 2.1.0"
 
 #Datepicker in form https://github.com/albertopq/jquery_datepicker
-gem "jquery_datepicker", "0.3.4"
+# gem "jquery_datepicker", "0.3.4"
 #gem 'formtastic', '2.2.0'
 
 group :development, :test do

@@ -18,8 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-# every 10.minutes do
-# 	runner "Hosting.email"	
-# end
+# Κάνει έλεγχο για hostings και domains που λήγουν
+every 1.day do
+	runner "Hosting.email"	
+	runner "Domain.email"	
+end
 
 

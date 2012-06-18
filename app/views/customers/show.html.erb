@@ -8,14 +8,14 @@
   <tr><td><b>ΑΦΜ:</b></td><td> <%= @customer.afm %></td></tr>
 </table>
 
-<h2>Χώροι φιλοξενίας</h2>
+<h2>Χώροι φιλοξενίας(<%= Hosting.find(:all, :conditions => "customer_id = #{@customer.id}").count %>)</h2>
 <table class="table table-striped table-condensed">
   <tr>
     <th>A/A</th>
     <th>Όνομα</th>
     <th>Κατοχύρωση</th>
-    <th>Λήξη</th>
     <th>Ανανέωση</th>
+    <th>Λήξη</th>
     <th></th>
     <th></th>
   </tr>
@@ -25,16 +25,38 @@
     <td><%= @aa = @aa+1 %></td>
     <td><%= hosting.name %></td>
     <td><%= hosting.registration %></td>
-    <td><%= hosting.expiration %></td>
     <td><%= hosting.renewal %></td>
+    <td><%= hosting.expiration %></td>
     <td><%#= link_to 'Περισσότερα', hosting, :class=>'btn btn-medium' %></td>
     <td><%= link_to 'Επεξεργασία', edit_hosting_path(hosting), :class=>'btn btn-medium' %></td>
   </tr>
 <% end %>
 </table>
 
-<h2>Ονόματα χώρου</h2>
-<p>Δεν έχει ονόματα χώρου ο πελάτης</p>
+<h2>Ονόματα χώρου(<%= Domain.find(:all, :conditions => "customer_id = #{@customer.id}").count %>)</h2>
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>A/A</th>
+    <th>Όνομα</th>
+    <th>Κατοχύρωση</th>
+    <th>Ανανέωση</th>
+    <th>Λήξη</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @aa=0 %>
+<% @customer.domains.each do |domain| %>
+  <tr>
+    <td><%= @aa = @aa+1 %></td>
+    <td><%= domain.name %></td>
+    <td><%= domain.registration %></td>
+    <td><%= domain.renewal %></td>
+    <td><%= domain.expiration %></td>
+    <td><%#= link_to 'Περισσότερα', hosting, :class=>'btn btn-medium' %></td>
+    <td><%= link_to 'Επεξεργασία', edit_domain_path(domain), :class=>'btn btn-medium' %></td>
+  </tr>
+<% end %>
+</table>
 
 
 

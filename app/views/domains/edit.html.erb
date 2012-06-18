@@ -3,7 +3,7 @@
 <div class="row">
   <div class="span6 offset3">
 
-<%= form_for(@domain) do |f| %>
+<%= form_for @domain, :html => { :class => "form-horizontal" } do |f| %>
 
 	<% if @domain.errors.any? %>
 	  <div id="error_explanation">
@@ -22,13 +22,13 @@
     <%= f.text_field :name %>
   
     <%= f.label "Κατοχύρωση" %>
-    <%= f.datepicker :registration %>
+    <%= f.text_field :registration, :class =>"datepicker" %>
 
     <%= f.label "Ανανέωση" %>
-    <%= f.datepicker :renewal %>
+    <%= f.text_field :renewal, :class =>"datepicker" %>
   
     <%= f.label "Λήξη" %>
-    <%= f.datepicker :expiration %>
+    <%= f.text_field :expiration, :class =>"datepicker" %>
 
     <%= f.label "DNS 1" %>
     <%= f.text_field :dns1 %>

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class HostingMailer < ActionMailer::Base
-    default from: "webmaster@projectteam.gr"
+    default from: '"Project Team" <webmaster@projectteam.gr>'
 
   def hosting_expires(hosting)
     @hosting = Hosting.find(hosting)
@@ -9,6 +9,6 @@ class HostingMailer < ActionMailer::Base
     @url  = "http://www.projectteam.gr"
     # return @customer
      mail(:to => @customer.email, 
-     	:subject => "Project Team - Η υπηρεσία σας λήγει")
+     	:subject => "Η υπηρεσία σας λήγει")
   end
 end

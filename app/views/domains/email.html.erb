@@ -9,9 +9,9 @@
       if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
       	Θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
 
-            <%#
-            @hosting = hosting
-             HostingMailer.hosting_expires(@hosting).deliver %>
+            <%
+            @domain = domain
+             DomainMailer.domain_expires(@domain).deliver %>
 
       
       <% else %>
