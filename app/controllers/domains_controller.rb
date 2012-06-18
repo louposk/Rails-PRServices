@@ -35,6 +35,12 @@ class DomainsController < ApplicationController
   # GET /domains/1/edit
   def edit
     @domain = Domain.find(params[:id])
+
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @domain }
+    end
   end
 
   # POST /domains

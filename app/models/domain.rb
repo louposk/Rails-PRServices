@@ -22,7 +22,7 @@ class Domain < ActiveRecord::Base
 
 	belongs_to :customer
 
-	/\A[\w{3}]+\.[a-z\d\-.].[a-z]+]z/i
+	# /\A[\w{3}]+\.[a-z\d\-.].[a-z]+]z/i
  #Regular expression for email
   # VALID_DOMAIN_NAME_REGEX = /\A[\w{3}]+\.[a-z\d\-.].[a-z]+]z/i
   # validates :name,  presence: true, format: { with: VALID_DOMAIN_NAME_REGEX },
