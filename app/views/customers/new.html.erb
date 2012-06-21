@@ -1,38 +1,42 @@
-<h1>New customer</h1>
-
-
+<h1>Νέος πελάτης</h1>
 <div class="row">
   <div class="span6 offset3">
 
   	<!-- Form errors messages -->
 
-    <%= form_for(@customer) do |f| %>
+    <%= form_for @customer, :html => { :class => "form-horizontal" } do |f| %>
     <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <fieldset>
+        <div class="control-group">
+            <%= f.label "Ονοματεπώνυμο", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :name %></div><br />
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+            <%= f.label "Email", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :email %></div><br />
 
-      <%= f.label :address %>
-      <%= f.text_field :address %>
-      
-      <%= f.label :tel %>
-      <%= f.text_field :tel %>
-      
-      <%= f.label :afm %>
-      <%= f.text_field :afm %>
+            <%= f.label "Διεύθυνση", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :address %></div><br />
+            
+            <%= f.label "Τηλέφωνο", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :tel %></div><br />
+            
+            <%= f.label "ΑΦΜ", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :afm %></div><br />
 
-<!--       <%= f.label :password %>
-      <%= f.password_field :password %>
+            <!--<%= f.label :password %>
+            <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %> -->
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation %> -->
 
-      <br /><%= f.submit "Δημιουργία χρήστη", class: "btn btn-nedium btn-primary" %>
-    <% end %>
-  </div>
+            <div class="form-actions">
+                <%= f.submit "Δημιουργία χρήστη", class: "btn btn-nedium btn-primary" %>
+            </div>
+        </div> <!-- .control-group -->
+    </fieldset>
+          <% end %>
+  </div> <!-- .span offset3 -->
 </div>
 
 <%= link_to 'Back', customers_path %>

@@ -4,7 +4,7 @@
   <div class="span6 offset3">
 
 
-<%= form_for(@hosting) do |f| %>
+<%= form_for @hosting, :html => { :class => "form-horizontal"} do |f| %>
 
 	<% if @hosting.errors.any? %>
 	  <div id="error_explanation">
@@ -19,32 +19,38 @@
 	  </div>
 	<% end %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  
-    <%= f.label :registration %>
-    <%= f.text_field :registration, :class =>"datepicker" %>
-  
-    <%= f.label :renewal %>
-    <%= f.text_field :renewal, :class =>"datepicker" %>
+    <fieldset>
+        <div class="control-group">
 
-    <%= f.label :expiration %>
-    <%= f.text_field :expiration, :class =>"datepicker" %> 
-    
-    <%= f.label "Ιδιοκτήτης" %>
-    <%= collection_select(:hosting, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %>
-    <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 
-    	{:include_blank => 'None'})
-    %>
-    <%#= options_from_collection_for_select(Customer.all, :id, :name) %>
-    <%#= f.text_field @customers %>
+            <%= f.label "Όνομα", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :name %></div><br />
+          
+            <%= f.label "Καταχώρηση", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :registration, :class =>"datepicker" %></div><br />
+          
+            <%= f.label "Ανανέωση", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :renewal, :class =>"datepicker" %></div><br />
 
+            <%= f.label "Λήξη", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :expiration, :class =>"datepicker" %></div><br /> 
+            
+            <%= f.label "Ιδιοκτήτης", :class=>"control-label" %>
+            <div class="controls"><%= collection_select(:hosting, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %></div><br />
+            <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 
+            	{:include_blank => 'None'})
+            %>
+            <%#= options_from_collection_for_select(Customer.all, :id, :name) %>
+            <%#= f.text_field @customers %>
 
-      <br /><%= f.submit "Ενημέρωση πακέτου", class: "btn btn-medium btn-primary" %>
+            <div class="form-actions">
+                <%= f.submit "Ενημέρωση πακέτου", class: "btn btn-medium btn-primary" %>
+                <%= link_to 'Επιστροφή', hostings_path, :class=>'btn btn-medium'  %>
+
+            </div>
+        </div> <!-- .control-group -->
+    </fieldset>
     <% end %>
 
-<%= link_to 'Επιστροφή', hostings_path, :class=>'btn btn-medium'  %>
-
-</div>
+</div> <!-- .span6 offset3 -->
 </div>
 

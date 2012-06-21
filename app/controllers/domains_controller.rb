@@ -35,12 +35,6 @@ class DomainsController < ApplicationController
   # GET /domains/1/edit
   def edit
     @domain = Domain.find(params[:id])
-
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @domain }
-    end
   end
 
   # POST /domains
@@ -96,10 +90,14 @@ class DomainsController < ApplicationController
       now = @now
 
         #Αποστολή email ενα μήνα πριν τη λήξη
-        if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
+        if domain.nil? {
+              if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
               @domain = domain
               DomainMailer.domain_expires(@domain).deliver
         end
+        }
+      end
+
 
     end 
 

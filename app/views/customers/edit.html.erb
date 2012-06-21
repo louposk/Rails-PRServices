@@ -9,28 +9,32 @@
     <%= render 'shared/error_messages' %>
 
 
-    <%= form_for(@customer) do |f| %>
+    <%= form_for @customer, :html => {:class => "form-horizontal"} do |f| %>
+    <fieldset>
+      <div class="control-group">
 
-      <%= f.label "Όνομα" %>
-      <%= f.text_field :name %>
+          <%= f.label "Όνομα", :class=>"control-label" %>
+          <div class="controls"><%= f.text_field :name %></div><br />
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+          <%= f.label :email, :class=>"control-label" %>
+          <div class="controls"><%= f.text_field :email %></div><br />
 
-      <%= f.label "Διεύθυνση" %>
-      <%= f.text_field :address %>
-      
-      <%= f.label "Τηλέφωνο" %>
-      <%= f.text_field :tel %>
-      
-      <%= f.label "ΑΦΜ" %>
-      <%= f.text_field :afm %>
+          <%= f.label "Διεύθυνση", :class=>"control-label" %>
+          <div class="controls"><%= f.text_field :address %></div><br />
+          
+          <%= f.label "Τηλέφωνο", :class=>"control-label" %>
+          <div class="controls"><%= f.text_field :tel %></div><br />
+          
+          <%= f.label "ΑΦΜ", :class=>"control-label" %>
+          <div class="controls"><%= f.text_field :afm %></div><br />
 
-      <br /><%= f.submit "Ενημέρωση στοιχείων", class: "btn btn-nedium btn-primary" %>
+          <div class="form-actions">
+            <%= f.submit "Ενημέρωση στοιχείων", class: "btn btn-nedium btn-primary" %>
+          </div>
+      </div> <!-- .control-group -->
+    </fieldset>
 
     <% end %>
-
-
 
 <%= link_to 'Αναλυτικά στοιχεία', @customer, :class=>'btn btn-medium' %> |
 <%= link_to 'Επιστροφή', customers_path, :class=>'btn btn-medium' %>

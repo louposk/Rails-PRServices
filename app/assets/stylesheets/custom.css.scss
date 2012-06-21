@@ -110,14 +110,16 @@ footer ul li {
 
 /* Forms */
 
-input, textarea, select, .uneditable-input {
+/* input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   padding: 10px;
-  height: auto;
+  height: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
+
+*/
 
 #error_explanation {
   color: #f00;

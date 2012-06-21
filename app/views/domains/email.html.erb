@@ -5,18 +5,21 @@
       exp = domain.expiration
       now = @now
 
+      unless domain.blank? && exp.nil?
       #Αποστολή email ενα μήνα πριν τη λήξη
-      if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
-      	Θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
+            if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
+            	Θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
 
-            <%
-            @domain = domain
-             DomainMailer.domain_expires(@domain).deliver %>
+                  <%
+                  @domain = domain
+                   DomainMailer.domain_expires(@domain).deliver %>
 
-      
-      <% else %>
-      	Δεν θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
+            
+            <% else %>
+            	Δεν θα σταλεί εμαιλ στο <%= domain.customer.email %><br />
+            <% end %>
       <% end %>
+      Δεν υπάρχει κανένα domain στη βάση..
 
       
 
