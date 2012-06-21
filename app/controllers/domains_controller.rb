@@ -90,15 +90,10 @@ class DomainsController < ApplicationController
       now = @now
 
         #Αποστολή email ενα μήνα πριν τη λήξη
-        if domain.nil? {
-              if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
-              @domain = domain
-              DomainMailer.domain_expires(@domain).deliver
-        end
-        }
-      end
-
-
+        if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month
+        @domain = domain
+        DomainMailer.domain_expires(@domain).deliver
+    end
     end 
 
   end
