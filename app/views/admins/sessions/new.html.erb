@@ -3,20 +3,31 @@
 <div class="row">
   <div class="span6 offset3">
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+  <fieldset>
+        <div class="control-group">
+			<%= f.label "Email", :class=>"control-label" %>
+			<div class="controls"><%= f.email_field :email %></div><br />
 
-  <div><%= f.label "Κωδικός" %><br />
-  <%= f.password_field :password %></div>
+			<%= f.label "Κωδικός", :class=>"control-label" %>
+			<div class="controls"><%= f.password_field :password %></div><br />
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label "Να με θυμάσαι;" %></div>
-  <% end -%>
+			<% if devise_mapping.rememberable? -%>
+			    <%= f.label "Να με θυμάσαι;", :class=>"control-label" %> 
+			    <div class="controls"><%= f.check_box :remember_me, :class=>"checkbox" %> </div><br />
+			<% end -%>
 
-  <div><%= f.submit "Είσοδος" %></div>
+		  	<div class="form-actions">
+		  		<%= f.submit "Είσοδος", :class=>"btn btn-medium btn-primary" %>
+
+		  		<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+  					<%= link_to "Ξέχασα τον κωδικό", new_password_path(resource_name), :class=>"btn btn-medium btn-danger"  %><br />
+				<% end -%>
+		  	</div>
+		</div> <!-- .control-group -->
+	</fieldset>
 <% end %>
 
-<%= render :partial => "admins/shared/links" %>
+<%#= render :partial => "admins/shared/links" %>
 </div>
 </div>

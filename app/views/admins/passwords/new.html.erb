@@ -1,12 +1,25 @@
-<h2>Forgot your password?</h2>
+<h2>Υπενθύμηση κωδικού</h2>
+<div class="row">
+  <div class="span6 offset3">
+  	<p>Θα σταλούν οδηγίες δημιουργίας νέου κωδικού</p>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class=>"form-horizontal" }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  	<fieldset>
+        <div class="control-group">
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
+		  <%= f.label :email, :class=>"control-label" %>
+		  <div class="controls"><%= f.email_field :email %></div><br />
+
+		  	<div class="form-actions">
+		  		<%= f.submit "Αποστολή οδηγιών", :class => "btn" %>
+			</div>
+		</div>
+	</fieldset>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<%#= render :partial => "devise/shared/links" %>
+
+</div>
+</div>
