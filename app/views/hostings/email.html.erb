@@ -1,26 +1,23 @@
 <h1>Αποστολή email</h1>
-<p>Θα αποσταλούν email στους παρακάτω:</p>
-<p> <% @hostings.each do |hosting|
-      
-      exp = hosting.expiration
-      now = @now
+<p> <% 
+      if(@hostings.present?)
+            @hostings.each do |hosting|
+            
+            exp = hosting.expiration
+            now = @now
 
-      #Αποστολή email ενα μήνα πριν τη λήξη
-      if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
-      	Θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
+                  #Αποστολή email ενα μήνα πριν τη λήξη
+                  if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
+                  	Θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
 
-            <%
-            @hosting = hosting
-             HostingMailer.hosting_expires(@hosting).deliver %>
-
-      
-      <% else %>
-      	Δεν θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
+                        <%    @hosting = hosting
+                              HostingMailer.hosting_expires(@hosting).deliver %>
+                  <% else %>
+                  	Δεν θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
+                  <% end %>
+            <% end %>
+      <% else %> Δεν υπάρχει κανένα hosting στη βάση
       <% end %>
-
-      
-
-    <% end %>
  
 
 </p>
