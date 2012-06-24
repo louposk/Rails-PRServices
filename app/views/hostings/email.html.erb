@@ -1,5 +1,5 @@
 <h1>Αποστολή email</h1>
-<p> <% 
+<p> <% @admins = Admin.all
       if(@hostings.present?)
             @hostings.each do |hosting|
             
@@ -10,8 +10,10 @@
                   if exp.year == now.year && exp.day == now.day && exp.month-1 == now.month %>
                   	Θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
 
-                        <%    @hosting = hosting
-                              HostingMailer.hosting_expires(@hosting).deliver %>
+                        <%    
+                           @hosting = hosting
+                           HostingMailer.hosting_expires(@hosting).deliver 
+                        %>
                   <% else %>
                   	Δεν θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
                   <% end %>

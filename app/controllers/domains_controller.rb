@@ -95,5 +95,5 @@ class DomainsController < ApplicationController
             DomainMailer.domain_expires(@domain).deliver
           end
       end 
-  end
+    end
 end
