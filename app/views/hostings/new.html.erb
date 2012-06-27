@@ -33,7 +33,7 @@
             <div class="controls"><%= f.text_field :expiration, :class =>"datepicker" %></div><br />
           
             <%= f.label "Ιδιοκτήτης", :class=>"control-label" %>
-            <div class="controls"><%= collection_select(:hosting, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %></div><br />
+            <div class="controls"><%= collection_select(:hosting,  :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %></div><br />
             
             <div class="form-actions">
                 <%= f.submit "Δημιουργία πακέτου", class: "btn btn-nedium btn-primary" %>
