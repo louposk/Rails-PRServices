@@ -14,6 +14,7 @@
   </tr>
 
     <% @aa=0 %>
+    <% if @hostings.present? %>
     <% @hostings.each do |hosting| %>
       <tr>
         <td><%= @aa = @aa+1 %></td>
@@ -27,6 +28,7 @@
         <td><%= link_to 'Διαγραφή', hosting, confirm: 'Είστε σίγουρος?', method: :delete, :class=>'btn btn-medium btn-danger' %></td>
       </tr>
       
+      <% end %>
       <% end %>
 </table>
 
