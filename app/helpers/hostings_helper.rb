@@ -14,4 +14,6 @@ module HostingsHelper
 	      HostingMailer.hosting_expires(hosting).deliver
 	    end
   end
+
+ 
 end

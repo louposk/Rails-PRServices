@@ -86,7 +86,7 @@ class DomainsController < ApplicationController
     @now = DateTime.now
 
       @domains.each do |domain|
-        exp = domain.expiration
+        exp = domain.renewal
         now = @now
 
           #Αποστολή email ενα μήνα πριν τη λήξη

@@ -1,8 +1,9 @@
 <h1>Πακέτο φιλοξενίας: <%= @hosting.name %></h1>
 <table class="table table-striped table-condensed">
+  <tr><td><b>Κατάσταση:</b></td><td> <i class='<%= status(Hosting,@hosting.id,@hosting.renewal) %>'></i></td></tr>
   <tr><td><b>Κατοχύρωση:</b></td><td> <%= @hosting.registration %></td></tr>
-  <tr><td><b>Λήξη:</b></td><td> <%= @hosting.expiration %></td></tr>
   <tr><td><b>Ανανέωση:</b></td><td> <%= @hosting.renewal %></td></tr>
+  <tr><td><b>Τιμή:</b></td><td> <%= @hosting.price %>€</td></tr>
   <tr><td><b>Ιδιοκτήτης:</b></td><td> <%= @hosting.customer.name %></td></tr>
 </table>
 

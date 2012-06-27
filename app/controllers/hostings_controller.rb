@@ -98,26 +98,12 @@ class HostingsController < ApplicationController
     end
   end
 
-  def all_hostings
-    @hostings = Hosting.all
-    @now = DateTime.now
-
-
-    @hostings.each do |hosting|
-      @exp = hosting.expiration
-
-      send_mail_one_month_before_expiration(@exp,@now,hosting)
-
-    end
-        #Checks for expiration dates and send email
-   end
-
   def email
     @hostings = Hosting.all
-    @now = DateTime.now
-
+    @now = Date.today 
+    
     @hostings.each do |hosting|
-      exp = hosting.expiration
+      exp = hosting.renewal
       now = @now
 
         #Αποστολή email ενα μήνα πριν τη λήξη
@@ -125,10 +111,7 @@ class HostingsController < ApplicationController
               @hosting = hosting
               HostingMailer.hosting_expires(@hosting).deliver
         end
-
     end 
-
   end
-
   
 end
