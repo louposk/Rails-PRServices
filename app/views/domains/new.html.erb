@@ -25,11 +25,11 @@
             <%= f.label "Κατοχύρωση", :class=>"control-label" %>
              <div class="controls"><%= f.text_field :registration , :tabindex => 70, :class =>"datepicker" %></div><br />
           
-            <%= f.label "Λήξη", :class=>"control-label" %>
-             <div class="controls"><%= f.text_field :expiration, :class =>"datepicker" %></div><br />
-          
             <%= f.label "Ανανέωση", :class=>"control-label" %>
              <div class="controls"><%= f.text_field :renewal, :class =>"datepicker" %></div><br />
+
+            <%= f.label "Τιμή", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :price %></div><br />
           
             <%= f.label "Ιδιοκτήτης", :class=>"control-label" %>
              <div class="controls"><%= collection_select(:domain, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %></div><br />
@@ -44,6 +44,9 @@
                 <%= f.submit "Καταχώρηση", class: "btn btn-medium btn-primary" %>
                 <%= link_to 'Back', domains_path %>
             </div>
+ 
+            <%= f.hidden_field :status, { :value => "active" } %>
+ 
         </div> <!-- .control-group -->
     </fieldset>
     <% end %>

@@ -28,9 +28,6 @@
 
             <%= f.label "Ανανέωση", :class=>"control-label" %>
             <div class="controls"><%= f.text_field :renewal, :class =>"datepicker" %></div><br />
-          
-            <%= f.label "Λήξη", :class=>"control-label" %>
-            <div class="controls"><%= f.text_field :expiration, :class =>"datepicker" %></div><br />
 
             <%= f.label "DNS 1", :class=>"control-label" %>
             <div class="controls"><%= f.text_field :dns1 %></div><br />
@@ -41,9 +38,9 @@
             <%= f.label "Κωδικός εξουσιοδότησης", :class=>"control-label" %>
             <div class="controls"><%= f.text_field :epp %></div><br />
 
-            <%= f.label "Κατάσταση", :class=>"control-label" %>
-            <div class="controls"><%= f.text_field :status %></div><br />
-          
+            <%= f.label "Τιμή", :class=>"control-label" %>
+            <div class="controls"><%= f.text_field :price %></div><br />
+
             <%= f.label "Ιδιοκτήτης", :class=>"control-label" %>
             <div class="controls"><%= collection_select(:domain, :customer_id, Customer.all, :id, :name, {:prompt => 'Επιλογή ιδιοκτήτη'}) %></div><br />
             <%#= f.select("customer", "customer_id", Customer.all.collect {|p| [ p.name, p.id ] }, 

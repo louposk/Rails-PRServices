@@ -1,12 +1,12 @@
 <h1>Όνομα χώρου: <%= @domain.name %></h1>
 <table class="table table-striped table-condensed">
+  <tr><td><b>Κατάσταση:</b></td><td> <i class='<%= status(Domain,@domain.id,@domain.renewal) %>'></i></td></tr>
   <tr><td><b>Κατοχύρωση:</b></td><td> <%= @domain.registration %></td></tr>
   <tr><td><b>Ανανέωση:</b></td><td> <%= @domain.renewal %></td></tr>
-  <tr><td><b>Λήξη:</b></td><td> <%= @domain.expiration %></td></tr>
   <tr><td><b>DNS 1:</b></td><td> <%= @domain.dns1 %></td></tr>
   <tr><td><b>DNS 2:</b></td><td> <%= @domain.dns2 %></td></tr>
   <tr><td><b>Κωδικός εξουσιοδότησης:</b></td><td> <%= @domain.epp %></td></tr>
-  <tr><td><b>Κατάσταση:</b></td><td> <%= @domain.status %></td></tr>
+  <tr><td><b>Τιμή:</b></td><td> <%= @domain.price %>€</td></tr>
   <tr><td><b>Ιδιοκτήτης:</b></td><td> <%= @domain.customer.name %></td></tr>
 </table>
 

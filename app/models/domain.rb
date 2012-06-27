@@ -18,7 +18,7 @@
 
 class Domain < ActiveRecord::Base
   attr_accessible :customer_id, :dns1, :dns2, :epp, :expiration, :name, :registration, 
-  :renewal, :status
+  :renewal, :status, :price
 
 	belongs_to :customer
 
