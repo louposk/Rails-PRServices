@@ -3,7 +3,7 @@ class HostingsController < ApplicationController
   # GET /hostings
   # GET /hostings.json
   def index
-    @hostings = Hosting.fing(:all)
+    @hostings = Hosting.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
