@@ -11,8 +11,8 @@
                   	Θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />
 
                         <%    
-                           @hosting = hosting
-                           HostingMailer.hosting_expires(@hosting).deliver 
+                           #@hosting = hosting
+                           #HostingMailer.hosting_expires(@hosting).deliver 
                         %>
                   <% else %>
                   	Δεν θα σταλεί εμαιλ στο <%= hosting.customer.email %><br />

@@ -4,7 +4,7 @@ class AdminController < ActionController::Base
 	    @domains = Domain.all
 	    @hostings = Hosting.all
 	    @admins = Admin.all
-	    @now = DateTime.now
+	    @now = Date.today 
 
 	      @domains.each do |domain|
 	        exp = domain.expiration

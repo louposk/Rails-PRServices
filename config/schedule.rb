@@ -22,7 +22,7 @@
 every 1.day do
 	runner "Hosting.email"	
 	runner "Domain.email"	
-	runner "Admin.email"
+	#runner "Admin.email"
 end
 
 
